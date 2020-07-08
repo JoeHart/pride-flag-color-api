@@ -126,6 +126,42 @@ Example Response:
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><path fill="#5BCEFA" d="M0 0h800v480H0z"></path><path fill="#F5A9B8" d="M0 96h800v288H0z"></path><path fill="#FFF" d="M0 192h800v96H0z"></path></svg>
 ```
 
+#### Fetch a Flag's ASCII Art
+
+Note: This requires a terminal with true color support
+
+```
+https://pride.dev/api/flags/${id}/ascii?width=40
+```
+
+This will return the Ascii version of the flag specified, width is optional
+
+Example Request:
+
+```
+https://pride.dev/api/flags/transgender_1999/ascii
+```
+
+This should show in your terminal as such:
+
+#### Fetch all Flags' ASCII Art
+
+Note: This requires a terminal with true color support
+
+```
+https://pride.dev/api/flags/ascii?width=40
+```
+
+This will return the Ascii version of the flag specified, width is optional
+
+Example Request:
+
+```
+https://pride.dev/api/flags/ascii
+```
+
+This should show in your terminal as such:
+
 #### Fetch all flags
 
 ```

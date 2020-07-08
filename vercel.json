@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "pages/api/flags/[id]/ascii.js": {
+      "includeFiles": "data/**"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { ApolloServer, gql } from "apollo-server-micro";
 import * as queryResolvers from "./queryResolvers";
 import base64 from "Base64";
+import svgToAscii from "../../../utils/svgToAscii";
 
 const typeDefs = gql`
   type Query {
@@ -25,6 +26,7 @@ const typeDefs = gql`
     svg: String!
     svgBase64: String!
     svgUrl: String!
+    ascii(width: Int): String!
   }
 `;
 
@@ -39,6 +41,10 @@ const resolvers = {
     svgBase64: (parent) => {
       const base64Data = base64.btoa(parent.svg);
       return "data:image/svg+xml;base64," + base64Data;
+    },
+    ascii: async (parent, args) => {
+      const image = await svgToAscii(parent.id, args.width);
+      return image.toString();
     },
   },
 };

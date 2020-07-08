@@ -1,4 +1,4 @@
-import flags from "../../data/flags";
+import flags from "../../../data/flags";
 
 export default (req, res) => {
   const {
